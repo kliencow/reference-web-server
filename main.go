@@ -55,14 +55,9 @@ func authHandler(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		session, _ := store.Get(r, cookieName)
 
-		if v, ok := session.Values[cookieValKey]; !ok {
-			fmt.Printf("%v\n", v)
-			fmt.Printf("%v\n", ok)
+		if _, ok := session.Values[cookieValKey]; !ok {
 			http.Redirect(w, r, "/forbidden", http.StatusFound)
 			return
-		} else {
-			fmt.Printf("%v\n", v)
-			fmt.Printf("%v\n", ok)
 		}
 
 		next.ServeHTTP(w, r)
