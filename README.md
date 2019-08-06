@@ -1,7 +1,7 @@
 # Golang / Gorilla Reference Server
 
 ## Purpose
-The reason I wrote this thing is that I was getting wound around the axel trying to figure out all the little subtle parts to golang webservers while, and at the same time, trying to learn Gorilla session management and Gorilla router / handler chaining. To simplify things, I just wrote a quick few-trick-poney to explore the space. 
+I wrote this thing because I was getting wound around the axel trying to figure out all the little subtle parts to golang webservers while, and at the same time, trying to learn Gorilla session management and Gorilla router / handler chaining. To simplify things, I just wrote a quick few-trick-poney to explore the space. 
 
 ## Implementation Details
 The implementation here has some good parts and bad parts. I like that it's pretty simple. Learning about subrouters was great! However, relying on subrouters is part of my greif here. I would like to spend some more time to figure out how to do this without using subrouters to protect some of the site, but not others. In some respects, it is elegant. The client gets to know by url which pages are secure and which are not. 
